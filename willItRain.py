@@ -3,6 +3,7 @@ import numpy as np
 import plotly.express as px
 import plotly.figure_factory as ff
 import plotly.graph_objects as go
+import joblib
 from plotly.subplots import make_subplots
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
@@ -173,3 +174,6 @@ y_pred = model.predict(X_test_scaled)
 
 accuracy = accuracy_score(y_test, y_pred)
 print('Model accuracy is: ', accuracy)
+
+# Pack model
+joblib.dump(model, 'model.pkl')
